@@ -89,3 +89,5 @@ C:\Users\User\Desktop\GitHub\Fmi\MusicProjectFmi\obj\Debug\MusicProjectFmi.cspro
 C:\Users\User\Desktop\GitHub\Fmi\MusicProjectFmi\obj\Debug\MusicProjectFmi.exe
 C:\Users\User\Desktop\GitHub\Fmi\MusicProjectFmi\obj\Debug\MusicProjectFmi.pdb
 C:\Users\User\Desktop\GitHub\Fmi\MusicProjectFmi\obj\Debug\MusicProjectFmi.Form1.resources
+C:\Users\User\Desktop\GitHub\Fmi\MusicProjectFmi\obj\Debug\MusicProjectFmi.MyPlaylistForm.resources
+C:\Users\User\Desktop\GitHub\Fmi\MusicProjectFmi\obj\Debug\MusicProjectFmi.AlbumForm.resources

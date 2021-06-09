@@ -12,6 +12,7 @@ namespace MusicProjectFmi.Data.EntityTypeConfiguration
         public void Configure(EntityTypeBuilder<SongPerformer> builder)
         {
             builder.HasKey(sp => new { sp.PerformerId, sp.SongId }); //anonimna funciaq lambda sintaksis
+           
             builder.HasOne(sp => sp.Song)
                 .WithMany(t => t.SongPerformer)
                 .HasForeignKey(sp => sp.SongId);

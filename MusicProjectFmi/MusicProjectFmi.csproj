@@ -163,6 +163,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlbumForm.Designer.cs">
+      <DependentUpon>AlbumForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Data\Initializers\ModelBuilderExtensions.cs" />
     <Compile Include="Form1.cs">
@@ -178,11 +184,17 @@
     <Compile Include="Data\Models\Performer.cs" />
     <Compile Include="Data\Models\Song.cs" />
     <Compile Include="Data\Models\SongPerformer.cs" />
-    <Compile Include="Migrations\20210607160333_Initial.cs" />
-    <Compile Include="Migrations\20210607160333_Initial.designer.cs">
-      <DependentUpon>20210607160333_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20210609174026_Initial.cs" />
+    <Compile Include="Migrations\20210609174026_Initial.designer.cs">
+      <DependentUpon>20210609174026_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <Compile Include="MyPlaylistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPlaylistForm.Designer.cs">
+      <DependentUpon>MyPlaylistForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AlbumRepository.cs" />
@@ -198,8 +210,14 @@
     <Compile Include="Repositories\SongRepository.cs" />
     <Compile Include="Repositories\SongsPerformersRepository.cs" />
     <Compile Include="StartUp.cs" />
+    <EmbeddedResource Include="AlbumForm.resx">
+      <DependentUpon>AlbumForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPlaylistForm.resx">
+      <DependentUpon>MyPlaylistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

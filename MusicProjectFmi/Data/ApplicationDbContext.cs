@@ -29,9 +29,12 @@ namespace MusicProjectFmi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);                                     // go trough base and execute OnModelCreating 
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<MyPlaylist>()
+            .Property(f => f.Id)
+            .ValueGeneratedOnAdd();
+            // go trough base and execute OnModelCreating 
             modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly); //execute ApplyConfigurationsFromAssembly
-            modelBuilder.Entity<MyPlaylist>().HasNoKey();
             modelBuilder.Seed();
 
         }

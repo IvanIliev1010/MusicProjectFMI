@@ -20,13 +20,13 @@ namespace MusicProjectFmi.Repositories
         public Performer GetPerformerByName(string name) => _appDbContext.Performers.AsNoTracking()
                .Include(p => p.SongPerformer)
                .AsNoTracking()
-               .SingleOrDefault(s => s.Name == name);
+               .FirstOrDefault(s => s.Name == name);
 
        public void AddPerformer(Performer performer)
         {
             _appDbContext.Performers.Add(performer);
             _appDbContext.SaveChanges();
-            _appDbContext.Entry<Performer>(performer).State = EntityState.Detached;// stops tracking the object after entering database
+           // _appDbContext.Entry<Performer>(performer).State = EntityState.Detached;// stops tracking the object after entering database
         }
     }
     

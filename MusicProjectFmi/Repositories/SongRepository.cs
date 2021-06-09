@@ -36,17 +36,18 @@ namespace MusicProjectFmi.Repositories
         }
         public void Update(Song song)
         {
-           // var oldSong = _appDbContext.Songs.AsNoTracking().Single(x => x.Id == song.Id);
-           // oldSong.AlbumId = song.AlbumId;
-           // oldSong.GenreId = song.GenreId;
-           // oldSong.Album = song.Album;
-           // oldSong.Genre = song.Genre;
-           // oldSong.Name = song.Name;
-           // oldSong.Year = song.Year;
-            _appDbContext.Entry(song).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
-            _appDbContext.Songs.Update(song);
-           // _appDbContext.Entry(oldSong).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+           var oldSong = _appDbContext.Songs.AsNoTracking().Single(x => x.Id == song.Id);
+            oldSong.AlbumId = song.AlbumId;
+            oldSong.GenreId = song.GenreId;
+            oldSong.Album = song.Album;
+            oldSong.Genre = song.Genre;
+            oldSong.Name = song.Name;
+            oldSong.Year = song.Year;
+           
+            _appDbContext.Entry(oldSong).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            //_appDbContext.Songs.Update(oldSong);
             _appDbContext.SaveChanges();
+            _appDbContext.Entry(oldSong).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
             _appDbContext.Entry(song).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
         }
         public void Delete(int id)

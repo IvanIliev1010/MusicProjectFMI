@@ -120,12 +120,15 @@ namespace MusicProjectFmi.Migrations
 
             modelBuilder.Entity("MusicProjectFmi.Data.Models.MyPlaylist", b =>
                 {
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("SongId")
                         .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("SongId");
 

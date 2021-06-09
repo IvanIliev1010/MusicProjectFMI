@@ -80,11 +80,13 @@ namespace MusicProjectFmi.Migrations
                 name: "MyPlaylists",
                 columns: table => new
                 {
-                    Name = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     SongId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_MyPlaylists", x => x.Id);
                     table.ForeignKey(
                         name: "FK_MyPlaylists_Songs_SongId",
                         column: x => x.SongId,

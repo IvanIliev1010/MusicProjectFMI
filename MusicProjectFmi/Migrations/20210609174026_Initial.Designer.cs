@@ -10,7 +10,7 @@ using MusicProjectFmi.Data;
 namespace MusicProjectFmi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210607160333_Initial")]
+    [Migration("20210609174026_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,12 +122,15 @@ namespace MusicProjectFmi.Migrations
 
             modelBuilder.Entity("MusicProjectFmi.Data.Models.MyPlaylist", b =>
                 {
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("SongId")
                         .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("SongId");
 
